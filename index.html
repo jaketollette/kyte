@@ -10,13 +10,15 @@
         <link rel="stylesheet" href="css/slick.css">
         <link rel="stylesheet" href="css/slick-theme.css">
         <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
 
     <body>
         <div class="wrapper main-nav">
             <nav class="container">
                 <span class="logo"><img src="images/logo.png" alt="KYTE Logo"></span>
-                <ul>
+                <span class="nav-toggle">MENU</span>
+                <ul class="collapse">
                     <li><a href="#" class="selected">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Portfolio</a></li>
@@ -255,6 +257,7 @@ tml> er>
 <!-- END FOOTER WRAPPER -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 <script src="js/slick.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
 <script>
     $(document).ready(function() {
         $('.slider').slick({
@@ -264,6 +267,22 @@ tml> er>
             slidesToShow: 1,
             centerMode: true,
             variableWidth: true
+        });
+        $('.main-nav').sticky({
+            topSpacing: 0,
+            getWidthFrom: 'container',
+            responsiveWidth: true,
+            zIndex: 500
+        });
+        $('.main-nav').on('sticky-start', function() {
+            $(this).addClass('sticky');
+        });
+        $('.main-nav').on('sticky-end', function() {
+            $(this).removeClass('sticky');
+            $('#sticky-wrapper').removeAttr("style");
+        })
+        $('.nav-toggle').click(function() {
+            $('.main-nav ul').toggleClass('collapse');
         });
         $('input, textarea').focus(function() {
             $(this).prev('span').hide();
@@ -277,4 +296,3 @@ tml> er>
 </body>
 
 </html>
-tml>
