@@ -35,7 +35,7 @@
                 <div class="center-content">
                     <h1>I'm Kyte Brooten</h1>
                     <h2>Freelance Photographer</h2>
-                    <ul>
+                    <ul class="social">
                         <a href="#" class="social twitter">
                             <li>
                                 <img src="images/twitter.png" alt="twitter">
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="section group">
-                    <div class="center-content">
+                    <div class="cta center-content">
                         <a href="#" class="button btn-email"><span>Hire Me</span></a>
                     </div>
                 </div>
@@ -236,25 +236,33 @@
         <div class="wrapper">
             <footer class="main-footer">
                 <div class="section group">
-                    <p>&copy; 2013 Kyte. All Rights Reserved. Theme by whatever</p>
+                    <p class="copyright">&copy; 2013 Kyte. All Rights Reserved. Theme by whatever</p>
                 </div>
                 <div class="section group">
-                    <ul>
-                        <li class="social twitter">Twitter</li>
-                        <li class="social instagram">Instagram</li>
-                        <li class="social dribble">Dribble</li>
-                        <li class="social email"> Email</li>
-                    </ul>
+                  <ul class="social">
+                      <a href="#" class="social twitter">
+                          <li>
+                              <img src="images/twitter-light.png" alt="twitter">
+                          </li>
+                      </a>
+                      <a href="#" class="social instagram">
+                          <li>
+                              <img src="images/instagram-light.png" alt="instagram">
+                          </li>
+                      </a>
+                      <a href="#" class="social dribble">
+                          <li>
+                              <img src="images/dribble-light.png" alt="dribble">
+                          </li>
+                      </a>
+                      <a href="#" class="social email">
+                          <li><img src="images/mail-light.png" alt="email"></li>
+                      </a>
+                  </ul>
                 </div>
             </footer>
         </div>
         <!-- END FOOTER WRAPPER -->
-    </body>
-
-</html>
-tml> er>
-</div>
-<!-- END FOOTER WRAPPER -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/jquery.sticky.js"></script>
@@ -285,10 +293,10 @@ tml> er>
             $('.main-nav ul').toggleClass('collapse');
         });
         $('input, textarea').focus(function() {
-            $(this).prev('span').hide();
+            $(this).prev('span').css("visibility", 'hidden');
         }).blur(function() {
             if ($(this).val() === '') {
-                $(this).prev('span').show();
+                $(this).prev('span').css('visibility', 'visible');
             }
         });
     });

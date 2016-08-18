@@ -114,11 +114,58 @@ p {
     background-size: 100% 100%;
   }
 }
-.center-content > .button {
-  position: absolute;
-  left: calc(50% - 100px);
+.cta.center-content > .button {
+  position: relative;
+  left: 45.5625%
 }
-
+/*========== Icons =====================*/
+.icon {
+  content: '\0000a0';
+  display: inline-block;
+  height: rem(10);
+  width: rem(10);
+  line-height: rem(10);
+  margin: 0 rem(10) 0 0;
+  &.map {
+    background: url(../images/map-icon.png) no-repeat center;
+  }
+  &.letter {
+    background: url(../images/letter-icon.png) no-repeat center;
+  }
+  &.phone {
+    background: url(../images/phone-icon.png) no-repeat center;
+  }
+}
+ul.social {
+  list-style: none;
+  margin: rem(27) auto;
+  display: table;
+  padding: 0;
+  position: relative;
+  a {
+    text-decoration: none;
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      width: rem(50);
+      height: rem(50);
+      margin-left: rem(5);
+      text-align: center;
+      transition: all .2s;
+      &:hover {
+        background: lighten(#646464, 10%);
+        transform: translateY(rem(-5));
+      }
+      img {
+        border: none;
+        margin: 0 auto;
+        max-width: rem(25);
+        margin-top: 23%;
+        display: inline-block;
+      }
+    }
+  }
+}
 /*==========  Non-Mobile First Method  ======*/
 .divider {
   background: $divider-color;
@@ -204,36 +251,7 @@ p {
     padding: 0 rem(24);
     line-height: rem(90);
   }
-  ul {
-    list-style: none;
-    margin: rem(27) auto;
-    display: table;
-    padding: 0;
-    position: relative;
-    a {
-      text-decoration: none;
-      li {
-        display: inline-block;
-        vertical-align: middle;
-        width: rem(50);
-        height: rem(50);
-        margin-left: rem(5);
-        text-align: center;
-        transition: all .2s;
-        &:hover {
-          background: lighten(#646464, 10%);
-          transform: translateY(rem(-5));
-        }
-        img {
-          border: none;
-          margin: 0 auto;
-          max-width: rem(25);
-          margin-top: 23%;
-          display: inline-block;
-        }
-      }
-    }
-  }
+
 }
 .wrapper > .container > .section.group {
   padding-top: rem(75);
@@ -319,7 +337,7 @@ p {
   }
 }
 .contact-info {
-  background: url(../images/contact_bg.png) no-repeat center center;
+  background: url(../images/contact-bg.jpg) no-repeat center center;
   background-size: 100% 100%;
   .contact-form {
     label {
@@ -340,6 +358,9 @@ p {
       background: rgba(255,255,255,.11);
       text-indent: rem(10);
       color: white;
+      &:focus {
+        outline-color: #1abb9c;
+      }
     }
     input[type=text] {
       height: rem(50);
@@ -349,6 +370,25 @@ p {
       padding-top: rem(17);
     }
   }
+  .contact-details {
+    margin-top: 6%;
+  }
+  .contact-details ul {
+    list-style:none;
+    padding-left: 0;
+    li {
+      padding-bottom: 1rem;
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+.copyright {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 0;
+
 }
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : rem(1068) ) {
